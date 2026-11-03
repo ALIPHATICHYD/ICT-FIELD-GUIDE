@@ -124,13 +124,16 @@ function viewHome() {
   return `
   <section class="screen">
     <div class="card trip-card">
-      <div class="qr" aria-hidden="true"></div>
-      <div style="flex:1;min-width:0">
-        <div class="eyebrow">${t('beforeLeave')}</div>
-        <p class="trip">${t('goingTo')} <select id="dept" aria-label="Department">${DEPARTMENTS.map((d) => `<option ${d === tp.dept ? 'selected' : ''}>${esc(d)}</option>`).join('')}</select> ${t('forA')} <select id="ttype" aria-label="Ticket type">${TICKET_TYPES.map((x) => `<option value="${x.id}" ${x.id === tp.type ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select></p>
-        <div class="slip">
-          ${tripGuides.map((g) => `<a class="ln" href="#/g/${g.id}"><span>${esc(g.title)}</span><i></i><em class="${saved ? '' : 'no'}">${saved ? t('savedOffline') : t('notSaved')}</em></a>`).join('')}
-          <div class="tot">${saved ? t('tripTotalSaved', GUIDES.length) : t('tripTotalNotSaved')}</div>
+      <div class="stub"><span>${t('beforeLeave')}</span><span>${new Date().toLocaleDateString('en-GB', { weekday: 'short', day: '2-digit', month: 'short' })}</span></div>
+      <div class="perf" aria-hidden="true"></div>
+      <div class="inner">
+        <div class="qr" aria-hidden="true"></div>
+        <div style="flex:1;min-width:0">
+          <p class="trip">${t('goingTo')} <select id="dept" aria-label="Department">${DEPARTMENTS.map((d) => `<option ${d === tp.dept ? 'selected' : ''}>${esc(d)}</option>`).join('')}</select> ${t('forA')} <select id="ttype" aria-label="Ticket type">${TICKET_TYPES.map((x) => `<option value="${x.id}" ${x.id === tp.type ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select></p>
+          <div class="slip">
+            ${tripGuides.map((g) => `<a class="ln" href="#/g/${g.id}"><span>${esc(g.title)}</span><i></i><em class="${saved ? '' : 'no'}">${saved ? t('savedOffline') : t('notSaved')}</em></a>`).join('')}
+            <div class="tot">${saved ? t('tripTotalSaved', GUIDES.length) : t('tripTotalNotSaved')}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -245,7 +248,7 @@ function viewGuide(id) {
           ${g.steps.map((s, i) => `<li class="card${done.includes(i) ? ' done' : ''}" data-i="${i}"><b>${rich(s.t, confirm)}</b><p>${rich(s.b, confirm)}</p>
             ${s.cmd ? `<div class="term${s.shell === 'info' ? ' info' : ''}"><code>${s.shell && PROMPT[s.shell] ? s.cmd.split('\n').map((l) => `<span class="ps">${PROMPT[s.shell]}</span> ${rich(l, confirm)}`).join('\n') : rich(s.cmd, confirm)}</code>${s.shell !== 'info' ? `<button data-copy="${i}">copy</button>` : ''}</div>` : ''}</li>`).join('')}
         </ol>
-        ${g.warn ? `<div class="card warn">${rich(g.warn, confirm)}</div>` : ''}
+        ${g.warn ? `<div class="card caution">${rich(g.warn, confirm)}</div>` : ''}
         <div class="card done-bar">
           <div><b>${t('fixed')}</b> <span style="color:var(--muted);font-size:14px">${t('fixedBody')}</span></div>
           <div class="acts"><input class="ticketno" id="ticketno" placeholder="Ticket #" value="${esc(store.get('fg-ticketno', ''))}" aria-label="Ticket number"><button class="btn ghost" id="ask">${t('askSenior')}</button><button class="btn" id="note">✓ ${t('copyNote')}</button></div>
@@ -320,7 +323,7 @@ async function bindFigure(id) {
     if (!document.body.contains(root)) return;
     disposeFig = mountFigure(root, mod.default);
   } catch (e) {
-    root.innerHTML = `<div class="card warn">This figure needs WebGL, which this browser has turned off. The guides still work.</div>`;
+    root.innerHTML = `<div class="card caution">This figure needs WebGL, which this browser has turned off. The guides still work.</div>`;
     console.error(e);
   }
 }
