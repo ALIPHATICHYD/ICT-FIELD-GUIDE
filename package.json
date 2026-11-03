@@ -1,0 +1,25 @@
+{
+  "name": "ict-field-guide",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Offline, installable troubleshooting guide for NPA ICT interns",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "test": "node --test tests/*.test.js",
+    "icons": "node scripts/make-icons.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.2.10",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "qrcode": "^1.5.4",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.12",
+    "vite-plugin-pwa": "^1.1.0",
+    "workbox-window": "^7.3.0"
+  }
+}
