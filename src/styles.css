@@ -169,6 +169,7 @@ p { line-height: 1.5; }
 .install::before { content: ""; position: absolute; right: -30px; top: -30px; width: 200px; height: 200px; border-radius: 50%;
   background: radial-gradient(#ffffff55 1px, transparent 1.4px) 0 0/6px 6px; -webkit-mask: radial-gradient(closest-side, #000, transparent); mask: radial-gradient(closest-side, #000, transparent); }
 .install > * { position: relative; }
+.install .install-link { display: inline-block; margin-top: 10px; color: #F3F1EA; font: 600 13px/1.3 var(--mono); text-decoration: underline; text-underline-offset: 3px; }
 .install .eyebrow { color: #ffffff99; }
 .install b { font-size: 20px; letter-spacing: -.02em; }
 .install p { opacity: .8; font-size: 14px; margin: 4px 0 0; }
