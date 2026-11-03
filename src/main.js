@@ -180,7 +180,7 @@ function viewHome() {
     </div>
 
     ${showInstall ? `<div class="card install">
-      <div><div class="eyebrow">${t('installEyebrow')}</div><b>${t('installTitle')}</b><p>${t('installBody')}</p>${isIos() ? `<p class="mono" style="font-size:12px;margin-top:8px">${t('installIos')}</p>` : ''}</div>
+      <div><div class="eyebrow">${t('installEyebrow')}</div><b>${t('installTitle')}</b><p>${t('installBody')}</p>${isIos() ? `<p class="mono" style="font-size:12px;margin-top:8px">${t('installIos')}</p>` : ''}<a class="install-link" href="#/g/install-field-guide">${t('installSteps')} →</a></div>
       ${installEvt ? `<button class="btn light" id="install">⤓ ${t('installBtn')}</button>` : ''}
     </div>` : `<p class="note">${t('installed')} · ${GUIDES.length} guides</p>`}
   </section>`;
@@ -377,7 +377,7 @@ function viewPoster() {
       <div class="head">ICT Field Guide</div>
       <h1>Scan before you leave.</h1>
       <canvas id="qr" aria-label="QR code for ${esc(appUrl())}"></canvas>
-      <ol><li>Scan this code with your phone camera.</li><li>Tap <b>Install</b> (iPhone: Share → Add to Home Screen).</li><li>Every guide now opens with no network.</li></ol>
+      <ol><li>Scan this code with your phone camera.</li><li>Tap <b>Install</b> (iPhone: Share → Add to Home Screen). Stuck? Search “install” in the app.</li><li>Every guide now opens with no network.</li></ol>
       <div class="url">${esc(appUrl())}</div>
     </div>
   </section>`;

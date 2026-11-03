@@ -47,5 +47,6 @@ test('search finds the obvious guide first', () => {
   assert.equal(searchGuides(GUIDES, 'ORA-12154')[0].id, 'oracle-tns');
   assert.equal(searchGuides(GUIDES, 'ups beeping')[0].id, 'ups-beeping');
   assert.equal(searchGuides(GUIDES, 'outlook sync')[0].id, 'outlook-sync');
+  assert.equal(searchGuides(GUIDES, 'install iphone')[0].id, 'install-field-guide');
   assert.deepEqual(searchGuides(GUIDES, ''), []);
 });

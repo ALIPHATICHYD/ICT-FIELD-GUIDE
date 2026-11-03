@@ -13,12 +13,13 @@ At NPA, a complaint becomes a ticket on the ICT Support dashboard. A supervisor 
 | Part | What it does |
 | --- | --- |
 | **Trip card** (home) | "I'm going to *Finance & Accounts* for a *software issue*" lists the guides for that trip and shows they're saved offline. |
-| **Guides** | 19 step-by-step guides in 8 categories: printers, software, networking, NPA email, Oracle, in-house apps and Java, hardware and UPS, servers. Commands have a copy button. Steps can be ticked off. |
+| **Guides** | 20 step-by-step guides in 8 categories: printers, software, networking, NPA email, Oracle, in-house apps and Java, hardware and UPS, servers. Commands have a copy button. Steps can be ticked off. |
 | **Search** | Works offline. Try `printer offline`, `ORA-12154`, `ups beeping`. |
 | **Resolution note** | One tap copies a note (ticket number, department, issue, steps done) to paste for the supervisor. "Ask a senior" shares where you're stuck. |
 | **How it works** | 3D figures (Three.js) you can turn around: a laser printer and a UPS. Step buttons, a cutaway window, sound words and live numbers driven by one model per device. The UPS has a load slider. |
 | **Tools inventory** | ICT tools and spares with where they're kept. |
 | **QR poster** | A printable poster with a QR code to the app's own address. |
+| **Install guide** | "Install the Field Guide on your phone" covers iPhone, iPad and Android. The install card on the home page links to it. |
 | **Languages** | Interface in English, Hausa, Yoruba and Igbo. Guides are in English for now. |
 
 ## Run it

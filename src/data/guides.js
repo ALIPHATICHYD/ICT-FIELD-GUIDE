@@ -392,6 +392,28 @@ export const GUIDES = [
     related: ['free-software-winget', 'office-install', 'outlook-setup', 'share-printer-ip'],
     reviewedBy: null
   },
+  {
+    id: 'install-field-guide',
+    cat: 'software',
+    title: 'Install the Field Guide on your phone (iPhone and Android)',
+    summary: 'Put this app on your home screen so every guide opens with no network.',
+    minutes: 2, level: 'basic', platform: 'iPhone, iPad, Android',
+    tickets: ['software'],
+    tags: ['install', 'field guide', 'iphone', 'ipad', 'ios', 'android', 'home screen', 'add to home screen', 'offline', 'pwa', 'app'],
+    need: ['Your phone', 'Wi-Fi or mobile data for the first visit'],
+    steps: [
+      { t: 'Open the app\'s address', b: 'Scan the QR code on the ICT office poster, or type aliphatichyd.github.io/ICT-FIELD-GUIDE. On iPhone or iPad use Safari (Chrome also works on iOS 16.4 and newer). On Android use Chrome.' },
+      { t: 'Wait until it says "saved"', b: 'The top of the screen shows when every guide is saved on the phone. Stay on the page until then.' },
+      { t: 'iPhone: tap Share', b: 'Tap the Share button, the square with an arrow pointing up. In Safari on iPhone it is at the bottom. On iPad it is next to the address bar.' },
+      { t: 'iPhone: tap "Add to Home Screen"', b: 'Scroll down the Share menu. If it is not there, tap Edit Actions and add it.' },
+      { t: 'iPhone: tap Add', b: 'Keep "Open as Web App" switched on, then tap Add. A Field Guide icon appears on your home screen.' },
+      { t: 'Android: tap Install app', b: 'Tap the Install app button on the home page of the Field Guide. If you don\'t see it, open the Chrome menu (⋮) and tap Install app or Add to Home screen.' },
+      { t: 'Test it with no network', b: 'Switch on Airplane Mode, open Field Guide from your home screen and open any guide. If it opens, you\'re ready to leave the office.' }
+    ],
+    warn: 'If the address won\'t open on the office Wi-Fi, use mobile data for the first visit. After that the app works with no network.',
+    related: ['no-internet'],
+    reviewedBy: null
+  },
 
   // ───────────────────────── SERVERS ─────────────────────────
   {
